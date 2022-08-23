@@ -49,6 +49,7 @@ namespace OfficialTM.Controllers
                 ticket.Priority = ticketModel.Priority;
                 ticket.Submitter = ticketModel.Submitter;
                 ticket.Status = ticketModel.Status;
+                ticket.Type = ticketModel.Type;
 
             }
             else
