@@ -1,0 +1,1794 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Auth0.AuthenticationApi</name>
+    </assembly>
+    <members>
+        <member name="T:Auth0.AuthenticationApi.AuthenticationApiClient">
+            <summary>
+            Client for the Auth0 Authentication API.
+            </summary>
+            <remarks>
+            Full documentation on the Auth0 Authentication API is available at https://auth0.com/docs/api/authentication
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.AuthenticationApiClient.BaseUri">
+            <inheritdoc />
+        </member>
+        <member name="M:Auth0.AuthenticationApi.AuthenticationApiClient.#ctor(System.Uri,Auth0.AuthenticationApi.IAuthenticationConnection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.AuthenticationApi.AuthenticationApiClient" /> class.
+            </summary>
+            <param name="baseUri">Your Auth0 domain URI, e.g. https://tenant.auth0.com</param>
+            <param name="connection">Optional <see cref="T:Auth0.AuthenticationApi.IAuthenticationConnection"/> used to influence connection behavior.
+            Defaults to a freshly created <see cref="T:Auth0.AuthenticationApi.HttpClientAuthenticationConnection"/> that uses a single <see cref="T:System.Net.Http.HttpClient"/>.</param>
+            <remarks>To use a custom <see cref="T:System.Net.Http.HttpClient"/> or <see cref="T:System.Net.Http.HttpMessageHandler"/> create a 
+            <see cref="T:Auth0.AuthenticationApi.HttpClientAuthenticationConnection"/> passing that into the constructor. e.g.
+            <code>var client = new AuthenticationApiClient(baseUri, new HttpClientAuthenticationConnection(myHttpClient));</code> or
+            <code>var client = new AuthenticationApiClient(baseUri, new HttpClientAuthenticationConnection(myHttpMessageHandler));</code> or
+            </remarks>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.AuthenticationApiClient.#ctor(System.String,Auth0.AuthenticationApi.IAuthenticationConnection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.AuthenticationApi.AuthenticationApiClient" /> class.
+            </summary>
+            <param name="domain">Your Auth0 domain name, e.g. tenant.auth0.com.</param>
+            <param name="connection">Optional <see cref="T:Auth0.AuthenticationApi.IAuthenticationConnection"/> used to influence connection behavior.
+            Defaults to a freshly created <see cref="T:Auth0.AuthenticationApi.HttpClientAuthenticationConnection"/> that uses a single <see cref="T:System.Net.Http.HttpClient"/>.</param>
+            <remarks>To use a custom <see cref="T:System.Net.Http.HttpClient"/> or <see cref="T:System.Net.Http.HttpMessageHandler"/> create a 
+            <see cref="T:Auth0.AuthenticationApi.HttpClientAuthenticationConnection"/> passing that into the constructor. e.g.
+            <code>var client = new AuthenticationApiClient(domain, new HttpClientAuthenticationConnection(myHttpClient));</code> or
+            <code>var client = new AuthenticationApiClient(domain, new HttpClientAuthenticationConnection(myHttpMessageHandler));</code> or
+            </remarks>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.AuthenticationApiClient.ChangePasswordAsync(Auth0.AuthenticationApi.Models.ChangePasswordRequest,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Auth0.AuthenticationApi.AuthenticationApiClient.GetImpersonationUrlAsync(Auth0.AuthenticationApi.Models.ImpersonationRequest,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Auth0.AuthenticationApi.AuthenticationApiClient.GetUserInfoAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Auth0.AuthenticationApi.AuthenticationApiClient.GetTokenAsync(Auth0.AuthenticationApi.Models.AuthorizationCodeTokenRequest,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Auth0.AuthenticationApi.AuthenticationApiClient.GetTokenAsync(Auth0.AuthenticationApi.Models.AuthorizationCodePkceTokenRequest,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.AuthenticationApiClient.GetTokenAsync(Auth0.AuthenticationApi.Models.ClientCredentialsTokenRequest,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.AuthenticationApiClient.GetTokenAsync(Auth0.AuthenticationApi.Models.RefreshTokenRequest,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.AuthenticationApiClient.GetTokenAsync(Auth0.AuthenticationApi.Models.ResourceOwnerTokenRequest,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.AuthenticationApiClient.GetTokenAsync(Auth0.AuthenticationApi.Models.PasswordlessEmailTokenRequest,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.AuthenticationApiClient.GetTokenAsync(Auth0.AuthenticationApi.Models.PasswordlessSmsTokenRequest,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.AuthenticationApiClient.GetTokenAsync(Auth0.AuthenticationApi.Models.DeviceCodeTokenRequest,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.AuthenticationApiClient.SignupUserAsync(Auth0.AuthenticationApi.Models.SignupUserRequest,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.AuthenticationApiClient.StartPasswordlessEmailFlowAsync(Auth0.AuthenticationApi.Models.PasswordlessEmailRequest,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.AuthenticationApiClient.StartPasswordlessSmsFlowAsync(Auth0.AuthenticationApi.Models.PasswordlessSmsRequest,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.AuthenticationApiClient.StartDeviceFlowAsync(Auth0.AuthenticationApi.Models.DeviceCodeRequest,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.AuthenticationApiClient.Dispose(System.Boolean)">
+            <summary>
+            Disposes of any owned disposable resources such as a <see cref="T:Auth0.AuthenticationApi.IAuthenticationConnection"/>.
+            </summary>
+            <param name="disposing">Whether we are actually disposing (<see langword="true"/>) or not (<see langword="false"/>).</param>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.AuthenticationApiClient.Dispose">
+            <summary>
+            Disposes of any owned disposable resources such as a <see cref="T:Auth0.AuthenticationApi.IAuthenticationConnection"/>.
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.AuthenticationApiClientExtensions">
+            <summary>
+            Additional operations that can be performed against a <see cref="T:Auth0.AuthenticationApi.IAuthenticationApiClient"/>.
+            </summary>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.AuthenticationApiClientExtensions.BuildAuthorizationUrl(Auth0.AuthenticationApi.IAuthenticationApiClient)">
+            <summary>
+            Creates a <see cref="T:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder" /> for building an authorization URL.
+            </summary>
+            <param name="client"><see cref="T:Auth0.AuthenticationApi.IAuthenticationApiClient"/> capable of providing the Base URL.</param>
+            <returns>A new <see cref="T:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder" /> configured for this baseUrl.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.AuthenticationApiClientExtensions.BuildLogoutUrl(Auth0.AuthenticationApi.IAuthenticationApiClient)">
+            <summary>
+            Creates a <see cref="T:Auth0.AuthenticationApi.Builders.LogoutUrlBuilder" /> for building a logout URL.
+            </summary>
+            <param name="client"><see cref="T:Auth0.AuthenticationApi.IAuthenticationApiClient"/> capable of providing the Base URL.</param>
+            <returns>A new <see cref="T:Auth0.AuthenticationApi.Builders.LogoutUrlBuilder" /> configured for this baseUrl.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.AuthenticationApiClientExtensions.BuildSamlUrl(Auth0.AuthenticationApi.IAuthenticationApiClient,System.String)">
+            <summary>
+            Creates a <see cref="T:Auth0.AuthenticationApi.Builders.SamlUrlBuilder" /> for building a SAML authentication URL.
+            </summary>
+            <param name="client"><see cref="T:Auth0.AuthenticationApi.IAuthenticationApiClient"/> capable of providing the Base URL.</param>
+            <param name="clientId">ID of the client.</param>
+            <returns>A new <see cref="T:Auth0.AuthenticationApi.Builders.SamlUrlBuilder" /> configured for this baseUrl and <paramref name="client"/>.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.AuthenticationApiClientExtensions.BuildWsFedUrl(Auth0.AuthenticationApi.IAuthenticationApiClient)">
+            <summary>
+            Creates a <see cref="T:Auth0.AuthenticationApi.Builders.WsFedUrlBuilder" /> for building a WS-Federation authentication URL.
+            </summary>
+            <param name="client"><see cref="T:Auth0.AuthenticationApi.IAuthenticationApiClient"/> capable of providing the Base URL.</param>
+            <returns>A new <see cref="T:Auth0.AuthenticationApi.Builders.WsFedUrlBuilder" /> configured for this baseUrl.</returns>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder">
+            <summary>
+            Builder class used to fluently construct an authorization URL.
+            </summary>
+            <remarks>
+            See https://auth0.com/docs/api/authentication#login for more details.
+            </remarks>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder"/> class.
+            </summary>
+            <param name="baseUrl">Base URL of the Authentication API represented as a <see cref="T:System.String"/>.</param>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder.#ctor(System.Uri)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder"/> class.
+            </summary>
+            <param name="baseUrl">Base URL of the Authentication API represented as a <see cref="T:System.Uri"/>.</param>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder.WithClient(System.String)">
+            <summary>
+            Adds the `client_id` query string parameter specifying the Client ID of the application.
+            </summary>
+            <param name="clientId">Client ID of the application.</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder"/> to allow fluent configuration.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder.WithConnection(System.String)">
+            <summary>
+            Adds the `connection` query string parameter specifying the connection name.
+            </summary>
+            <param name="connectionName">Name of the connection.</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder"/> to allow fluent configuration.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder.WithRedirectUrl(System.String)">
+            <summary>
+            Adds the `redirect_uri` query string parameter specifying the redirect URI.
+            </summary>
+            <param name="uri">URI to redirect to.</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder"/> to allow fluent configuration.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder.WithRedirectUrl(System.Uri)">
+            <summary>
+            Adds the `redirect_uri` query string parameter specifying the redirect URI.
+            </summary>
+            <param name="uri"><see cref="T:System.Uri"/> to redirect to.</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder"/> to allow fluent configuration.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder.WithResponseType(Auth0.AuthenticationApi.Models.AuthorizationResponseType[])">
+            <summary>
+            Adds the `response_type` query string parameter specifying the types of responses 
+            that the client expects.
+            </summary>
+            <param name="responseType"><see cref="T:Auth0.AuthenticationApi.Models.AuthorizationResponseType"/> the client expects.</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder"/> to allow fluent configuration.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder.WithScope(System.String)">
+            <summary>
+            Adds the `scope` query string parameter indicating the scopes the client wants to request.
+            </summary>
+            <param name="scope">Scopes to request. Multiple scopes must be separated by a space character.</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder"/> to allow fluent configuration.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder.WithScopes(System.String[])">
+            <summary>
+            Adds the `scope` query string parameter indicating the scopes the client wants to request.
+            </summary>
+            <param name="scopes">Scopes the client wants to request.</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder"/> to allow fluent configuration.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder.WithState(System.String)">
+            <summary>
+            Adds the `state` query string parameter specifying a value to be returned on completion in 
+            order to prevent CSRF attacks.
+            </summary>
+            <param name="state">State value to be passed back on successful authorization.</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder"/> to allow fluent configuration.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder.WithAudience(System.String)">
+            <summary>
+            Adds the `audience` query string parameter to request API access.
+            </summary>
+            <param name="audience">Audience to request API access for.</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder"/> to allow fluent configuration.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder.WithNonce(System.String)">
+            <summary>
+            Adds the `nonce` query string parameter specifying a cryptographically random nonce.
+            </summary>
+            <param name="nonce">The nonce.</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder"/> to allow fluent configuration.</returns>
+            <remarks>See https://auth0.com/docs/api-auth/tutorials/nonce for more details</remarks>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder.WithResponseMode(Auth0.AuthenticationApi.Models.AuthorizationResponseMode)">
+            <summary>
+            Adds the `response_mode` query string parameter.
+            </summary>
+            <param name="responseMode">Response mode to use.</param>
+            <returns>The <see cref="T:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder"/>.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder.WithConnectionScope(System.String)">
+            <summary>
+            Adds the `connection_scope` query string parameter.
+            </summary>
+            <param name="connectionScope">Connection scope to be passed to the corresponding connection. Multiple scopes must be separated by a space character.</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder"/> to allow fluent configuration.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder.WithConnectionScopes(System.String[])">
+            <summary>
+            Adds the `connection_scope` query string parameter.
+            </summary>
+            <param name="connectionScope">Connection scopes to be passed to the corresponding connection.</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder"/> to allow fluent configuration.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder.WithOrganization(System.String)">
+            <summary>
+            Adds the `organization` query string parameter.
+            </summary>
+            <param name="organization">The ID of the organization to log the user in to</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder"/> to allow fluent configuration.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder.WithInvitation(System.String)">
+            <summary>
+            Adds the `invitation` query string parameter.
+            </summary>
+            <param name="invitation">The Id of an invitation to accept. This is available from the URL that is given when participating in a user invitation flow.</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.AuthorizationUrlBuilder"/> to allow fluent configuration.</returns>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Builders.LogoutUrlBuilder">
+            <summary>
+            Builder class used to fluently construct a logout URL.
+            </summary>
+            <remarks>
+            See https://auth0.com/docs/api/authentication#logout
+            </remarks>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.LogoutUrlBuilder.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.AuthenticationApi.Builders.LogoutUrlBuilder"/> class.
+            </summary>
+            <param name="baseUrl">Base URL of the Authentication API represented as a <see cref="T:System.String"/>.</param>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.LogoutUrlBuilder.#ctor(System.Uri)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.AuthenticationApi.Builders.LogoutUrlBuilder"/> class.
+            </summary>
+            <param name="baseUrl">Base URL of the Authentication API represented as a <see cref="T:System.Uri"/>.</param>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.LogoutUrlBuilder.WithReturnUrl(System.String)">
+            <summary>
+            Adds the `redirect_uri` query string parameter specifying the redirect URI.
+            </summary>
+            <param name="uri">URI to redirect to.</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.LogoutUrlBuilder"/> to allow fluent configuration.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.LogoutUrlBuilder.WithReturnUrl(System.Uri)">
+            <summary>
+            Adds the `redirect_uri` query string parameter specifying the redirect URI.
+            </summary>
+            <param name="uri"><see cref="T:System.Uri"/> to redirect to.</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.LogoutUrlBuilder"/> to allow fluent configuration.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.LogoutUrlBuilder.WithClientId(System.String)">
+            <summary>
+            Adds the `client_id` query string parameter specifying the Client ID of the application.
+            </summary>
+            <param name="clientId">Client ID of the application.</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.LogoutUrlBuilder"/> to allow fluent configuration.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.LogoutUrlBuilder.Federated">
+            <summary>
+            Adds the `federated` flag query string parameter (no value).
+            </summary>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.LogoutUrlBuilder"/> to allow fluent configuration.</returns>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Builders.SamlUrlBuilder">
+            <summary>
+            Builder class used to fluently construct a SAML authorization URL.
+            </summary>
+            <remarks>
+            See https://auth0.com/docs/api/authentication#accept-request for more details.
+            </remarks>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.SamlUrlBuilder.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.AuthenticationApi.Builders.SamlUrlBuilder"/> class.
+            </summary>
+            <param name="baseUrl">Base URL of the Authentication API represented as a <see cref="T:System.String"/>.</param>
+            <param name="clientId">Client ID of the application.</param>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.SamlUrlBuilder.#ctor(System.Uri,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.AuthenticationApi.Builders.SamlUrlBuilder"/> class.
+            </summary>
+            <param name="baseUrl">Base URL of the Authentication API represented as a <see cref="T:System.Uri"/>.</param>
+            <param name="clientId">Client ID of the application.</param>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.SamlUrlBuilder.WithConnection(System.String)">
+            <summary>
+            Adds the `connection` query string parameter specifying the connection name.
+            </summary>
+            <param name="connectionName">Name of the connection.</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.SamlUrlBuilder"/> to allow fluent configuration.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.SamlUrlBuilder.WithRelayState(System.String)">
+            <summary>
+            Adds the `RelayState` query string parameter.
+            </summary>
+            <param name="value">Value of `RelayState` parameter in key-value format, e.g. <code>xcrf=abc&amp;ru=/foo</code>.</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.SamlUrlBuilder"/> to allow fluent configuration.</returns>
+            <remarks>
+            See https://auth0.com/docs/protocols/saml/saml-configuration/special-configuration-scenarios/idp-initiated-sso#auth0-as-identity-provider-where-idp-initiates-sso for more details on RelayState.
+            </remarks>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.SamlUrlBuilder.WithRelayState(System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Adds the `RelayState` query string parameter.
+            </summary>
+            <param name="values">Dictionary containing key-value pairs for the `RelayState` parameter.</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.SamlUrlBuilder"/> to allow fluent configuration.</returns>
+            <remarks>
+            See https://auth0.com/docs/protocols/saml/saml-configuration/special-configuration-scenarios/idp-initiated-sso#auth0-as-identity-provider-where-idp-initiates-sso for more details on RelayState.
+            </remarks>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Builders.UrlBuilderBase`1">
+            <summary>
+            Base class for all strongly-typed fluent URL builders.
+            </summary>
+            <typeparam name="T">Type of inherited class to faciliate fluent chaining.</typeparam>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.UrlBuilderBase`1.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.AuthenticationApi.Builders.UrlBuilderBase`1"/> class.
+            </summary>
+            <param name="baseUrl">Base URL represented as a <see cref="T:System.String"/>.</param>
+            <param name="resource">Resource being accessed.</param>
+            <exception cref="T:System.ArgumentNullException" />
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.UrlBuilderBase`1.#ctor(System.Uri,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.AuthenticationApi.Builders.UrlBuilderBase`1"/> class.
+            </summary>
+            <param name="baseUrl">Base URL represented as a <see cref="T:System.Uri"/>.</param>
+            <param name="resource">Resource being accessed.</param>
+            <exception cref="T:System.ArgumentNullException" />
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.UrlBuilderBase`1.AddUrlSegment(System.String,System.String)">
+            <summary>
+            Adds or replaces a URL segment based on name.
+            </summary>
+            <remarks>
+            When specifying the resource, a URL segment can be specified with curly braces. 
+            For example, the resource can specified as "samlp/{client}". This method
+            can be used to specify a value for the {client} segment of the resource.
+            </remarks>
+            <param name="name">Name of the segment (without the curly braces).</param>
+            <param name="value">Value the segment should contain.</param>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.UrlBuilderBase`1.AddQueryString(System.String,System.String)">
+            <summary>
+            Adds or replaces a query string parameter.
+            </summary>
+            <param name="name">Name of the query string parameter.</param>
+            <param name="value">Value of the query string parameter.</param>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.UrlBuilderBase`1.WithValue(System.String,System.String)">
+            <summary>
+            Adds an arbitrary query string parameter.
+            </summary>
+            <param name="name">Name of the query string parameter.</param>
+            <param name="value">Value of the query string parameter.</param>
+            <returns>Current object to allow fluent configuration.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.UrlBuilderBase`1.Build">
+            <summary>
+            Builds the complete URL based on the values added so far.
+            </summary>
+            <returns><see cref="T:System.Uri"/> containing the complete URL.</returns>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Builders.WsFedUrlBuilder">
+            <summary>
+            Builder class used to fluently construct a WS-Federation authorization URL.
+            </summary>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.WsFedUrlBuilder.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.AuthenticationApi.Builders.WsFedUrlBuilder"/> class.
+            </summary>
+            <param name="baseUrl">Base URL of the Authentication API represented as a <see cref="T:System.String"/>.</param>
+            <param name="clientId">Optional Client ID of the application.</param>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.WsFedUrlBuilder.#ctor(System.Uri,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.AuthenticationApi.Builders.WsFedUrlBuilder"/> class.
+            </summary>
+            <param name="baseUrl">Base URL of the Authentication API represented as a <see cref="T:System.Uri"/>.</param>
+            <param name="clientId">Optional Client ID of the application.</param>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.WsFedUrlBuilder.WithClient(System.String)">
+            <summary>
+            Adds the `client` URL segment specifying the Client ID of the application.
+            </summary>
+            <param name="clientId">Client ID of the application.</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.WsFedUrlBuilder"/> to allow fluent configuration.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.WsFedUrlBuilder.WithWhr(System.String)">
+            <summary>
+            Adds the `whr` query string parameter.
+            </summary>
+            <param name="value">Value of the `whr` parameter.</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.WsFedUrlBuilder"/> to allow fluent configuration.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.WsFedUrlBuilder.WithWctx(System.String)">
+            <summary>
+            Adds the `wctx` query string parameter.
+            </summary>
+            <param name="value">Value of the `wctx` parameter in key-value pair format, e.g. <code>xcrf=abc&amp;ru=/foo</code>.</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.WsFedUrlBuilder"/> to allow fluent configuration.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.WsFedUrlBuilder.WithWctx(System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Adds the `wctx` query string parameter.
+            </summary>
+            <param name="values">Dictionary containing the key-value pairs of the `wctx` parameter.</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.WsFedUrlBuilder"/> to allow fluent configuration.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Builders.WsFedUrlBuilder.WithWtrealm(System.String)">
+            <summary>
+            Adds the `wtrealm` query string parameter.
+            </summary>
+            <param name="value">Value of the `wtrealm` query string parameter.</param>
+            <returns>Current <see cref="T:Auth0.AuthenticationApi.Builders.WsFedUrlBuilder"/> to allow fluent configuration.</returns>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.ExtensionMethods">
+            <summary>
+            Provider of generic extension methods.
+            </summary>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.ExtensionMethods.AddIfNotEmpty(System.Collections.Generic.IDictionary{System.String,System.String},System.String,System.String)">
+            <summary>
+            Adds a key and value to the dictionary provided the value
+            is not <see langword="null"/> or empty.
+            </summary>
+            <param name="dictionary">Dictionary to add the key and value to.</param>
+            <param name="key">Key of the item to add if <paramref name="value"/> is not <see langword="null"/> or empty.</param>
+            <param name="value">Value of the item to add if it is not <see langword="null"/> or empty.</param>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.FlexibleDateTimeConverter">
+            <summary>
+            A JSON date converter that reads both ISO 8601 and epoch dates.
+            </summary>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.FlexibleDateTimeConverter.Add(System.DateTime,System.TimeSpan)">
+            <summary>
+            Add a DateTime and a TimeSpan.
+            The maximum time is DateTime.MaxTime.  It is not an error if time + timespan > MaxTime.
+            Just return MaxTime.
+            </summary>
+            <param name="time">Initial <see cref="T:System.DateTime"/> value.</param>
+            <param name="timespan"><see cref="T:System.TimeSpan"/> to add.</param>
+            <returns><see cref="T:System.DateTime"/> as the sum of time and timespan.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.FlexibleDateTimeConverter.GetMaxValue(System.DateTimeKind)">
+            <summary>
+            Gets the Maximum value for a DateTime specifying kind.
+            </summary>
+            <param name="kind">DateTimeKind to use.</param>
+            <returns>DateTime of specified kind.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.FlexibleDateTimeConverter.GetMinValue(System.DateTimeKind)">
+            <summary>
+            Gets the Minimum value for a DateTime specifying kind.
+            </summary>
+            <param name="kind">DateTimeKind to use.</param>
+            <returns>DateTime of specified kind.</returns>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.HttpClientAuthenticationConnection">
+            <summary>
+            Implements the <see cref="T:Auth0.AuthenticationApi.IAuthenticationConnection"/> using <see cref="T:System.Net.Http.HttpClient"/> which
+            can be either supplied or automatically managed.
+            </summary>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.HttpClientAuthenticationConnection.#ctor(System.Net.Http.HttpClient)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.AuthenticationApi.HttpClientAuthenticationConnection"/> class.
+            </summary>
+            <param name="httpClient">Optional <see cref="T:System.Net.Http.HttpClient"/> to use when sending requests.</param>
+            <remarks>
+            If you supply a <see cref="T:System.Net.Http.HttpClient"/> it is your responsibility to manage its lifecycle and 
+            dispose it when appropriate.
+            If you do not supply a <see cref="T:System.Net.Http.HttpClient"/> one will be created automatically and disposed
+            of when this object is disposed.
+            </remarks>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.HttpClientAuthenticationConnection.#ctor(System.Net.Http.HttpMessageHandler)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.AuthenticationApi.HttpClientAuthenticationConnection"/> class
+            with a specific <see cref="T:System.Net.Http.HttpMessageHandler"/>.
+            </summary>
+            <param name="handler"><see cref="T:System.Net.Http.HttpMessageHandler"/> to use within the managed <see cref="T:System.Net.Http.HttpClient"/>.</param>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.HttpClientAuthenticationConnection.GetAsync``1(System.Uri,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.HttpClientAuthenticationConnection.SendAsync``1(System.Net.Http.HttpMethod,System.Uri,System.Object,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.HttpClientAuthenticationConnection.Dispose(System.Boolean)">
+            <summary>
+            Disposes of any owned disposable resources such as the underlying <see cref="T:System.Net.Http.HttpClient"/> if owned.
+            </summary>
+            <param name="disposing">Whether we are actually disposing (<see langword="true"/>) or not (<see langword="false"/>).</param>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.HttpClientAuthenticationConnection.Dispose">
+            <summary>
+            Disposes of any owned disposable resources such as the underlying <see cref="T:System.Net.Http.HttpClient"/> if owned.
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.IAuthenticationApiClient">
+            <summary>
+            Client for communicating with the Auth0 Authentication API.
+            </summary>
+            <remarks>
+            Full documentation for the Authentication API is available at https://auth0.com/docs/auth-api
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.IAuthenticationApiClient.BaseUri">
+            <summary>
+            Base URI that will be used for all the requests.
+            </summary>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.IAuthenticationApiClient.ChangePasswordAsync(Auth0.AuthenticationApi.Models.ChangePasswordRequest,System.Threading.CancellationToken)">
+            <summary>
+            Requests a password change email for a given email address and connection.
+            </summary>
+            <param name="request"><see cref="T:Auth0.AuthenticationApi.Models.ChangePasswordRequest" /> specifying the user, connection and optional client details.</param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+            <returns><see cref="T:System.Threading.Tasks.Task"/> representing the async operation containing either the JSON error response or the plain text success message response.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.IAuthenticationApiClient.GetImpersonationUrlAsync(Auth0.AuthenticationApi.Models.ImpersonationRequest,System.Threading.CancellationToken)">
+            <summary>
+            Obtains a one-time link that can be used to log in as a specific user.
+            </summary>
+            <param name="request">The <see cref="T:Auth0.AuthenticationApi.Models.ImpersonationRequest"/> containing the details of the user to impersonate.</param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+            <returns><see cref="T:System.Threading.Tasks.Task"/> which can be used to sign in as the specified user.</returns>
+            <remarks>This feature has been deprecated and will be removed from Auth0 and this library in a future release.</remarks>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.IAuthenticationApiClient.GetUserInfoAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Returns user information based on the access token that was obtained during login.
+            </summary>
+            <param name="accessToken">Access token used to obtain the user information.</param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+            <returns><see cref="T:System.Threading.Tasks.Task"/> representing the async operation containing the
+            <see cref="T:Auth0.AuthenticationApi.Models.UserInfo"/> requested..</returns>
+            <remarks>Information included in the response depends on the scopes initially granted.</remarks>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.IAuthenticationApiClient.GetTokenAsync(Auth0.AuthenticationApi.Models.AuthorizationCodeTokenRequest,System.Threading.CancellationToken)">
+            <summary>
+            Exchanges an Authorization Code for an Access Token.
+            </summary>
+            <param name="request"><see cref="T:Auth0.AuthenticationApi.Models.AuthorizationCodeTokenRequest"/> containing Authorization Code details.</param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+            <returns><see cref="T:System.Threading.Tasks.Task"/> representing the async operation containing 
+            a <see cref="T:Auth0.AuthenticationApi.Models.AccessTokenResponse" /> with the requested tokens.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.IAuthenticationApiClient.GetTokenAsync(Auth0.AuthenticationApi.Models.AuthorizationCodePkceTokenRequest,System.Threading.CancellationToken)">
+            <summary>
+            Exchanges an Authorization Code using PKCE for an Access Token.
+            </summary>
+            <param name="request"><see cref="T:Auth0.AuthenticationApi.Models.AuthorizationCodePkceTokenRequest"/> containing Authorization Code and PKCE details.</param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+            <returns><see cref="T:System.Threading.Tasks.Task"/> representing the async operation containing 
+            a <see cref="T:Auth0.AuthenticationApi.Models.AccessTokenResponse" /> with the requested tokens.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.IAuthenticationApiClient.GetTokenAsync(Auth0.AuthenticationApi.Models.ClientCredentialsTokenRequest,System.Threading.CancellationToken)">
+            <summary>
+            Requests an Access Token using the Client Credentials Grant flow.
+            </summary>
+            <param name="request"><see cref="T:Auth0.AuthenticationApi.Models.ClientCredentialsTokenRequest"/> containing
+            client and audience details of the request.</param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+            <returns><see cref="T:System.Threading.Tasks.Task"/> representing the async operation containing 
+            a <see cref="T:Auth0.AuthenticationApi.Models.AccessTokenResponse" /> with the requested tokens.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.IAuthenticationApiClient.GetTokenAsync(Auth0.AuthenticationApi.Models.RefreshTokenRequest,System.Threading.CancellationToken)">
+            <summary>
+            Refreshes all tokens by way of the the Refresh Token obtained during authorization.
+            </summary>
+            <param name="request"><see cref="T:Auth0.AuthenticationApi.Models.RefreshTokenRequest"/> containing Refresh Token and associated parameters.</param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+            <returns><see cref="T:System.Threading.Tasks.Task"/> representing the async operation containing 
+            a <see cref="T:Auth0.AuthenticationApi.Models.AccessTokenResponse" /> with the requested tokens.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.IAuthenticationApiClient.GetTokenAsync(Auth0.AuthenticationApi.Models.ResourceOwnerTokenRequest,System.Threading.CancellationToken)">
+            <summary>
+            Performs authentication by providing user-supplied information in a <see cref="T:Auth0.AuthenticationApi.Models.ResourceOwnerTokenRequest"/>.
+            </summary>
+            <param name="request"><see cref="T:Auth0.AuthenticationApi.Models.ResourceOwnerTokenRequest"/> containing information regarding the username, password etc.</param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+            <returns><see cref="T:System.Threading.Tasks.Task"/> representing the async operation containing 
+            a <see cref="T:Auth0.AuthenticationApi.Models.AccessTokenResponse" /> with the requested tokens.</returns>
+            <remarks>
+            The grant_type parameter required by the /oauth/token endpoint will automatically be inferred from the <paramref name="request"/> parameter. If no Realm was specified,
+            then the grant_type will be set to "password". If a Realm was specified, then the grant_type will be set to "http://auth0.com/oauth/grant-type/password-realm"
+            </remarks>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.IAuthenticationApiClient.GetTokenAsync(Auth0.AuthenticationApi.Models.PasswordlessEmailTokenRequest,System.Threading.CancellationToken)">
+            <summary>
+            Requests an Access Token using the Passwordless flow through email.
+            </summary>
+            <param name="request"><see cref="T:Auth0.AuthenticationApi.Models.PasswordlessEmailTokenRequest"/> containing request details to exchange a one time password received through email.</param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+            <returns><see cref="T:System.Threading.Tasks.Task"/> representing the async operation containing 
+            a <see cref="T:Auth0.AuthenticationApi.Models.AccessTokenResponse" /> with the requested tokens.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.IAuthenticationApiClient.GetTokenAsync(Auth0.AuthenticationApi.Models.PasswordlessSmsTokenRequest,System.Threading.CancellationToken)">
+            <summary>
+            Requests an Access Token using the Passwordless flow through SMS.
+            </summary>
+            <param name="request"><see cref="T:Auth0.AuthenticationApi.Models.PasswordlessSmsTokenRequest"/> containing request details to exchange a one time password received through SMS.</param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+            <returns><see cref="T:System.Threading.Tasks.Task"/> representing the async operation containing 
+            a <see cref="T:Auth0.AuthenticationApi.Models.AccessTokenResponse" /> with the requested tokens.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.IAuthenticationApiClient.GetTokenAsync(Auth0.AuthenticationApi.Models.DeviceCodeTokenRequest,System.Threading.CancellationToken)">
+            <summary>
+            Requests an Access Token using the Device Authorization flow
+            </summary>
+            <param name="request"><see cref="T:Auth0.AuthenticationApi.Models.DeviceCodeTokenRequest"/> containing request details to exchange a device code.</param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+            <returns><see cref="T:System.Threading.Tasks.Task"/> representing the async operation containing 
+            a <see cref="T:Auth0.AuthenticationApi.Models.AccessTokenResponse" /> with the requested tokens.</returns>
+            <remarks>
+            This must be polled while the user is completing their part of the flow at an interval no more frequent than that returned by <see cref="M:Auth0.AuthenticationApi.IAuthenticationApiClient.StartDeviceFlowAsync(Auth0.AuthenticationApi.Models.DeviceCodeRequest,System.Threading.CancellationToken)" />.
+            </remarks>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.IAuthenticationApiClient.SignupUserAsync(Auth0.AuthenticationApi.Models.SignupUserRequest,System.Threading.CancellationToken)">
+            <summary>
+            Creates a new user given the user details specified.
+            </summary>
+            <param name="request"><see cref="T:Auth0.AuthenticationApi.Models.SignupUserRequest" /> containing information of the user to sign up.</param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+            <returns><see cref="T:System.Threading.Tasks.Task"/> representing the async operation containing 
+            a <see cref="T:Auth0.AuthenticationApi.Models.SignupUserResponse" /> with the information of the signed up user.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.IAuthenticationApiClient.StartPasswordlessEmailFlowAsync(Auth0.AuthenticationApi.Models.PasswordlessEmailRequest,System.Threading.CancellationToken)">
+            <summary>
+            Starts a new Passwordless email flow.
+            </summary>
+            <param name="request"><see cref="T:Auth0.AuthenticationApi.Models.PasswordlessEmailRequest" /> containing details about the Passwordless email flow to start.</param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+            <returns><see cref="T:System.Threading.Tasks.Task"/> representing the async operation containing 
+            a <see cref="T:Auth0.AuthenticationApi.Models.PasswordlessEmailResponse" /> with the information of the signed up user.</returns>
+            <returns><see cref="T:System.Threading.Tasks.Task"/> representing the async operation containing 
+            a <see cref="T:Auth0.AuthenticationApi.Models.PasswordlessEmailResponse" /> with the details of the request.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.IAuthenticationApiClient.StartPasswordlessSmsFlowAsync(Auth0.AuthenticationApi.Models.PasswordlessSmsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Starts a new Passwordless SMS flow.
+            </summary>
+            <param name="request"><see cref="T:Auth0.AuthenticationApi.Models.PasswordlessSmsRequest" /> containing details about the Passwordless SMS flow to start.</param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+            <returns><see cref="T:System.Threading.Tasks.Task"/> representing the async operation containing 
+            a <see cref="T:Auth0.AuthenticationApi.Models.PasswordlessSmsResponse" /> with the details of the request.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.IAuthenticationApiClient.StartDeviceFlowAsync(Auth0.AuthenticationApi.Models.DeviceCodeRequest,System.Threading.CancellationToken)">
+            <summary>
+            Starts a new Device Authorization flow
+            </summary>
+            <param name="request"><see cref="T:Auth0.AuthenticationApi.Models.DeviceCodeRequest"/> containing client, scope and audience</param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+            <returns><see cref="T:System.Threading.Tasks.Task"/> representing the async operation containing 
+            a <see cref="T:Auth0.AuthenticationApi.Models.DeviceCodeResponse" /> with the details of the request.</returns>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.IAuthenticationConnection">
+            <summary>
+            Interface used to customize implementation or mock behavior of <see cref="T:Auth0.AuthenticationApi.AuthenticationApiClient"/>.
+            </summary>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.IAuthenticationConnection.GetAsync``1(System.Uri,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)">
+            <summary>
+            Send a HTTP GET request to the given <paramref name="uri"/> with optional <paramref name="headers"/> as
+            an asynchronous operation.
+            </summary>
+            <typeparam name="T">Type of object to deserialize the result into.</typeparam>
+            <param name="uri">Absolute <see cref="T:System.Uri"/> to send the request to.</param>
+            <param name="headers">Optional dictionary containing additional headers to be sent.</param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+            <returns>The task object representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.IAuthenticationConnection.SendAsync``1(System.Net.Http.HttpMethod,System.Uri,System.Object,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)">
+            <summary>
+            Send an HTTP request to <paramref name="uri"/> using the HTTP <paramref name="method"/> as an asynchronous operation.
+            </summary>
+            <typeparam name="T">Type of object to deserialize the result into.</typeparam>
+            <param name="method"><see cref="T:System.Net.Http.HttpMethod"/> to use.</param>
+            <param name="uri">Absolute <see cref="T:System.Uri"/> to send the request to.</param>
+            <param name="body">Body of the HTTP request that will be sent.</param>
+            <param name="headers">Optional dictionary containing additional headers to be sent.</param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+            <returns>The task object representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.JwtSignatureAlgorithm">
+            <summary>
+            Represents possible signing algorithms for JsonWebTokens (JWTs).
+            </summary>
+        </member>
+        <member name="F:Auth0.AuthenticationApi.JwtSignatureAlgorithm.RS256">
+            <summary>
+            RS256 asymmetric algorithm verified using public key via JWKS.
+            </summary>
+        </member>
+        <member name="F:Auth0.AuthenticationApi.JwtSignatureAlgorithm.HS256">
+            <summary>
+            HS256 symmetric algorithm verified using client secret.
+            </summary>
+            <remarks>
+            Should only be used in environments where a client secret can be kept secure.
+            e.g. Web server-side applications.  NOT mobile or desktop.
+            </remarks>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.AccessTokenResponse">
+            <summary>
+            Represents an access token response.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.AccessTokenResponse.IdToken">
+            <summary>
+            Identifier token.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.AccessTokenResponse.ExpiresIn">
+            <summary>
+            Expiration time in seconds.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.AccessTokenResponse.RefreshToken">
+            <summary>
+            Refresh token.
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.AuthorizationCodePkceTokenRequest">
+            <summary>
+            Represents a request to exchange an authorization code (PKCE) for an access token during the OAuth authentication flow.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.AuthorizationCodePkceTokenRequest.CodeVerifier">
+            <summary>
+            Cryptographically random key that was used to generate the `code_challenge` passed to the `/authorize` endpoint.
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.AuthorizationCodeRequestBase">
+            <summary>
+            Base class for all types of Authorization Code requests.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.AuthorizationCodeRequestBase.Code">
+            <summary>
+            Authorization code to be exchanged.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.AuthorizationCodeRequestBase.ClientId">
+            <summary>
+            Client ID of the application.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.AuthorizationCodeRequestBase.SigningAlgorithm">
+            <summary>
+            What <see cref="T:Auth0.AuthenticationApi.JwtSignatureAlgorithm"/> is used to verify the signature
+            of Id Tokens.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.AuthorizationCodeRequestBase.RedirectUri">
+            <summary>
+            Redirect URI passed during the login process.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.AuthorizationCodeRequestBase.ClientSecret">
+            <summary>
+            Client secret of the application for Id Token verification.
+            </summary>
+            <remarks>
+            Optional except when using <see cref="T:Auth0.AuthenticationApi.Models.AuthorizationCodeRequestBase"/>.
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.AuthorizationCodeRequestBase.Organization">
+            <summary>
+            Organization for Id Token verification.
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.AuthorizationCodeTokenRequest">
+            <summary>
+            Represents a request to exchange an authorization code for an access token during the OAuth authentication flow.
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.AuthorizationResponseMode">
+            <summary>
+            Represents an authentication response mode.
+            </summary>
+        </member>
+        <member name="F:Auth0.AuthenticationApi.Models.AuthorizationResponseMode.FormPost">
+            <summary>
+            Response will be a form POST.
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.AuthorizationResponseType">
+            <summary>
+            Represents an authentication reponse type.
+            </summary>
+        </member>
+        <member name="F:Auth0.AuthenticationApi.Models.AuthorizationResponseType.Code">
+            <summary>
+            Response is an authorization code.
+            </summary>
+        </member>
+        <member name="F:Auth0.AuthenticationApi.Models.AuthorizationResponseType.Token">
+            <summary>
+            Response is an access_token.
+            </summary>
+        </member>
+        <member name="F:Auth0.AuthenticationApi.Models.AuthorizationResponseType.IdToken">
+            <summary>
+            Response is an id_token.
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.ChangePasswordRequest">
+            <summary>
+            Represents a request to change a password via an email.
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.ClientCredentialsTokenRequest">
+            <summary>
+            Represents a request get a token using the Client Credentials Grant flow.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.ClientCredentialsTokenRequest.Audience">
+            <summary>
+            Unique identifier of the target API to access.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.ClientCredentialsTokenRequest.ClientId">
+            <summary>
+            Client ID of the application.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.ClientCredentialsTokenRequest.ClientSecret">
+            <summary>
+            Client Secret of the application.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.ClientCredentialsTokenRequest.SigningAlgorithm">
+            <summary>
+            What <see cref="T:Auth0.AuthenticationApi.JwtSignatureAlgorithm"/> is used to verify the signature
+            of Id Tokens.
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.DeviceCodeRequest">
+            <summary>
+            Represents a request to start a Device Authorization flow.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.DeviceCodeRequest.ClientId">
+            <summary>
+            Client ID of the application.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.DeviceCodeRequest.Scope">
+            <summary>
+            Optional scopes to be requested. Separate multiple values with a space.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.DeviceCodeRequest.Audience">
+            <summary>
+            Optional unique identifier of the target API to access.
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.DeviceCodeResponse">
+            <summary>
+            Represents the response from a Device Authorization request.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.DeviceCodeResponse.DeviceCode">
+            <summary>
+            The unique code for the device. When the user goes to the <see cref="P:Auth0.AuthenticationApi.Models.DeviceCodeResponse.VerificationUri"/> in their browser-based device, this code will be bound to their session.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.DeviceCodeResponse.UserCode">
+            <summary>
+            The code that should be input at the <see cref="P:Auth0.AuthenticationApi.Models.DeviceCodeResponse.VerificationUri"/> to authorize the device.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.DeviceCodeResponse.VerificationUri">
+            <summary>
+            The URL the user should visit to authorize the device.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.DeviceCodeResponse.ExpiresIn">
+            <summary>
+            The lifetime (in seconds) of the <see cref="P:Auth0.AuthenticationApi.Models.DeviceCodeResponse.DeviceCode"/> and <see cref="P:Auth0.AuthenticationApi.Models.DeviceCodeResponse.UserCode"/>.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.DeviceCodeResponse.Interval">
+            <summary>
+            The interval (in seconds) at which the app should poll the token URL to request a token.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.DeviceCodeResponse.VerificationUriComplete">
+            <summary>
+             The complete URL the user should visit to authorize the device. This allows embedding the <see cref="P:Auth0.AuthenticationApi.Models.DeviceCodeResponse.UserCode"/> in the URL.
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.DeviceCodeTokenRequest">
+            <summary>
+            Represents a request to exchange a Device Code for an access token during the OAuth authentication flow.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.DeviceCodeTokenRequest.DeviceCode">
+            <summary>
+            Device code to be exchanged.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.DeviceCodeTokenRequest.ClientId">
+            <summary>
+            Client ID of the application.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.DeviceCodeTokenRequest.SigningAlgorithm">
+            <summary>
+            What <see cref="T:Auth0.AuthenticationApi.JwtSignatureAlgorithm"/> is used to verify the signature
+            of Id Tokens.
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.ImpersonationRequest">
+            <summary>
+            Represents a request to obtain a one-time link for impersonating a user.
+            </summary>
+            <remarks>This feature has been deprecated and will be removed from Auth0 and this SDK in a future release.</remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.ImpersonationRequest.ClientId">
+            <summary>
+            Client ID of the application.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.ImpersonationRequest.ImpersonateId">
+            <summary>
+            ID of the user to be impersonated.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.ImpersonationRequest.ImpersonatorId">
+            <summary>
+            user_id of the impersonator.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.ImpersonationRequest.Protocol">
+            <summary>
+            Protocol to use against the identity provider. Can be one of `oauth2`, `wsfed`, `wsfed-rms`, or `samlp`.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.ImpersonationRequest.ResponseType">
+            <summary>
+            Response type - should be `code`.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.ImpersonationRequest.State">
+            <summary>
+            State parameter to pass in the request.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.ImpersonationRequest.Token">
+            <summary>
+            Bearer token to include with the request in the Authorization header.
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.PasswordlessEmailRequest">
+            <summary>
+            Represents a request to start a Passwordless email flow.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.PasswordlessEmailRequest.ClientId">
+            <summary>
+            Client ID of the application.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.PasswordlessEmailRequest.ClientSecret">
+            <summary>
+            Client Secret of the application.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.PasswordlessEmailRequest.Email">
+            <summary>
+            Email to which the link or code must be sent.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.PasswordlessEmailRequest.Type">
+            <summary>
+            <see cref="T:Auth0.AuthenticationApi.Models.PasswordlessEmailRequestType"/> of the request.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.PasswordlessEmailRequest.AuthenticationParameters">
+            <summary>
+            Additional authentication parameters.
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.PasswordlessEmailRequestType">
+            <summary>
+            Type of passwordless email request.
+            </summary>
+        </member>
+        <member name="F:Auth0.AuthenticationApi.Models.PasswordlessEmailRequestType.Link">
+            <summary>
+            Send a link.
+            </summary>
+        </member>
+        <member name="F:Auth0.AuthenticationApi.Models.PasswordlessEmailRequestType.Code">
+            <summary>
+            Send a code.
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.PasswordlessEmailResponse">
+            <summary>
+            Represents a Passwordless email response.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.PasswordlessEmailResponse.Id">
+            <summary>
+            Identifier of this request.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.PasswordlessEmailResponse.Email">
+            <summary>
+            Email to which the request was sent.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.PasswordlessEmailResponse.EmailVerified">
+            <summary>
+            Whether the email address has been verified (true) or has not been verified (false).
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.PasswordlessEmailTokenRequest">
+            <summary>
+            Represents a request to exchange a one time password, received through email, for an access token using the Passwordless flow.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.PasswordlessEmailTokenRequest.Email">
+            <summary>
+            Email used for the Passwordless flow
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.PasswordlessSmsRequest">
+            <summary>
+            Represents a Passwordless SMS flow request.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.PasswordlessSmsRequest.ClientId">
+            <summary>
+            Client ID of the application.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.PasswordlessSmsRequest.ClientSecret">
+            <summary>
+            Client Secret of the application.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.PasswordlessSmsRequest.PhoneNumber">
+            <summary>
+            Phone number to which the code must be sent.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.PasswordlessSmsRequest.ForwardedForIp">
+            <summary>
+            IP address of the end user this token is requested for for rate limit purposes.
+            </summary>
+            <remarks>
+            See https://auth0.com/docs/connections/passwordless/best-practices#link-accounts for more details.
+            </remarks>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.PasswordlessSmsResponse">
+            <summary>
+            Represents the response from a Passwordless SMS request.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.PasswordlessSmsResponse.Id">
+            <summary>
+            Unique identifier of the request.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.PasswordlessSmsResponse.PhoneNumber">
+            <summary>
+            Phone number to which the code was sent.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.PasswordlessSmsResponse.RequestLanguage">
+            <summary>
+            Language the message sent was written in.
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.PasswordlessSmsTokenRequest">
+            <summary>
+            Represents a request to exchange a one time password, received through SMS, for an access token using the Passwordless flow.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.PasswordlessSmsTokenRequest.PhoneNumber">
+            <summary>
+            Phonenumber used for the Passwordless flow
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.PasswordlessSmsTokenRequest.ForwardedForIp">
+            <summary>
+            IP address of the end user this token is requested for for rate limit purposes.
+            </summary>
+            <remarks>
+            See https://auth0.com/docs/connections/passwordless/best-practices#link-accounts for more details.
+            </remarks>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.PasswordlessTokenRequestBase">
+            <summary>
+            Base class for all types of Passwordless requests.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.PasswordlessTokenRequestBase.ClientId">
+            <summary>
+            Client ID of the application.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.PasswordlessTokenRequestBase.ClientSecret">
+            <summary>
+            Client Secret of the application.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.PasswordlessTokenRequestBase.Code">
+            <summary>
+            The user's verification code
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.PasswordlessTokenRequestBase.Audience">
+            <summary>
+            Unique identifier of the target API to access.
+            </summary>
+            <remarks>
+            Optional except when requesting a token to call an API.
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.PasswordlessTokenRequestBase.Scope">
+            <summary>
+            Scopes to be requested. Separate multiple values with a space.
+            </summary>
+            <remarks>
+            Optional, use `openid` to get an ID Token, or `openid profile email` to also include user profile information in the ID Token.
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.PasswordlessTokenRequestBase.SigningAlgorithm">
+            <summary>
+            What <see cref="T:Auth0.AuthenticationApi.JwtSignatureAlgorithm"/> is used to verify the signature
+            of Id Tokens.
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.RefreshTokenRequest">
+            <summary>
+            Represents a request to get new tokens based on a previously obtained refresh token.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.RefreshTokenRequest.Audience">
+            <summary>
+            Optional audience used for refreshing the access token token.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.RefreshTokenRequest.RefreshToken">
+            <summary>
+            A valid refresh token previously issued to the client.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.RefreshTokenRequest.Scope">
+            <summary>
+            Optional scope for the access request.
+            </summary>
+            <remarks>
+            The requested scope must not include any scope not originally granted
+            by the resource owner, and if omitted is treated as equal to the scope
+            originally granted by the resource owner.
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.RefreshTokenRequest.ClientId">
+            <summary>
+            Client ID for which the refresh token was issued.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.RefreshTokenRequest.ClientSecret">
+            <summary>
+            Client secret for which the refresh token was issued.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.RefreshTokenRequest.SigningAlgorithm">
+            <summary>
+            What <see cref="T:Auth0.AuthenticationApi.JwtSignatureAlgorithm"/> is used to verify the signature
+            of Id Tokens.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.RefreshTokenRequest.Organization">
+            <summary>
+            Organization for Id Token verification.
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.ResourceOwnerTokenRequest">
+            <summary>
+            Represents a request get a token using the Resource Owner Grant flow.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.ResourceOwnerTokenRequest.Audience">
+            <summary>
+            Optional unique identifier of the target API to access.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.ResourceOwnerTokenRequest.ClientId">
+            <summary>
+            Client ID of the application.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.ResourceOwnerTokenRequest.ClientSecret">
+            <summary>
+            Optional client secret of the application.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.ResourceOwnerTokenRequest.Realm">
+            <summary>
+            Optional realm the user belongs to.
+            </summary>
+            <remarks>
+            See https://auth0.com/docs/api-auth/grant/password#realm-support for more details.
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.ResourceOwnerTokenRequest.Password">
+            <summary>
+            Resource Owner's secret.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.ResourceOwnerTokenRequest.Scope">
+            <summary>
+            Optional scopes to be requested. Separate multiple values with a space.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.ResourceOwnerTokenRequest.Username">
+            <summary>
+            Resource Owner's identifier.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.ResourceOwnerTokenRequest.ForwardedForIp">
+            <summary>
+            IP address of the end user this token is requested for.
+            </summary>
+            <remarks>
+            It is important to set this if using this API server-side.
+            See https://auth0.com/docs/api-auth/tutorials/using-resource-owner-password-from-server-side for more details.
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.ResourceOwnerTokenRequest.SigningAlgorithm">
+            <summary>
+            What <see cref="T:Auth0.AuthenticationApi.JwtSignatureAlgorithm"/> is used to verify the signature
+            of Id Tokens.
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.SignupUserRequest">
+            <summary>
+            Represents a request to sign up a new user.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.SignupUserRequest.Password">
+            <summary>
+            Initial password for this user.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.SignupUserRequest.Username">
+            <summary>
+            Username of this user. Only valid if the connection requires a username.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.SignupUserRequest.GivenName">
+            <summary>
+            Given name for this user.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.SignupUserRequest.FamilyName">
+            <summary>
+            Family name for this user.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.SignupUserRequest.Name">
+            <summary>
+            Name of this user.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.SignupUserRequest.Nickname">
+            <summary>
+            Nickname of this user.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.SignupUserRequest.Picture">
+            <summary>
+            URL to a picture of this user.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.SignupUserRequest.UserMetadata">
+            <summary>
+            Metadata the user has read/write access to. 
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.SignupUserResponse">
+            <summary>
+            Represents the response from signing up a new user.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.SignupUserResponse.Email">
+            <summary>
+            Email address of the new user.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.SignupUserResponse.EmailVerified">
+            <summary>
+            Indicates whether the email has been verified or not.
+            </summary>
+            <value><c>true</c> if the email is verified; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.SignupUserResponse.Id">
+            <summary>
+            Unique identifier of the user.
+            </summary>
+            <remarks>
+            The server can return `_id`, `id` or `user_id` depending on various factors.
+            For convenience we expose it here as just one.
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.SignupUserResponse.Username">
+            <summary>
+            Username of this user.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.SignupUserResponse.GivenName">
+            <summary>
+            Given name of this user.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.SignupUserResponse.FamilyName">
+            <summary>
+            Family name of this user.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.SignupUserResponse.Name">
+            <summary>
+            Name of this user.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.SignupUserResponse.Nickname">
+            <summary>
+            Nickname of this user.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.SignupUserResponse.Picture">
+            <summary>
+            Url to a picture of this user.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.SignupUserResponse.UserMetadata">
+            <summary>
+            Metadata the user has read/write access to. 
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.TokenBase">
+            <summary>
+            Base class for all authentication tokens.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.TokenBase.AccessToken">
+            <summary>
+            Access token.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.TokenBase.TokenType">
+            <summary>
+            Type of token.
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.UserInfo">
+            <summary>
+            Represents user information returned from a standard OpenID Connect `/userinfo` endpoint.
+            </summary>
+            <remarks>
+            See http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims for more details.
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfo.UserId">
+            <summary>
+            Subject-Identifier for the user at the issuer. A unique value to identify the user.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfo.FullName">
+            <summary>
+            Full name of the user in displayable form including all name parts, 
+            possibly including titles and suffixes, ordered according to the user's locale and preferences.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfo.FirstName">
+            <summary>
+            Given name(s) or first name(s) of the user. 
+            </summary>
+            <remarks>
+            May contain multiple given names separated by space characters.
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfo.LastName">
+            <summary>
+            Surname(s) or last name(s) of the user. 
+            </summary>
+            <remarks>
+            May contain multiple given names separated by space characters or no family name at all.
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfo.MiddleName">
+            <summary>
+            Middle name(s) of the user. 
+            </summary>
+            <remarks>
+            May contain multiple middle names separated by space characters.
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfo.NickName">
+            <summary>
+            Casual name of the user that may or may not be the same as <see cref="P:Auth0.AuthenticationApi.Models.UserInfo.FirstName"/>. 
+            </summary>
+            <example>
+            Nickname of 'Mike' might be returned for a <see cref="P:Auth0.AuthenticationApi.Models.UserInfo.FirstName"/> of `Michael`.
+            </example>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfo.PreferredUsername">
+            <summary>
+            Shorthand name by which the user wishes to be referred to at the RP, such as janedoe or j.doe. 
+            </summary>
+            <remarks>
+            MAY be any valid JSON string including special characters such as @, /, or whitespace. 
+            You MUST NOT rely upon this value being unique.
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfo.Profile">
+            <summary>
+            URL of the user's profile page.
+            </summary>
+            <remarks>
+            The contents of this Web page SHOULD be about the End-User.
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfo.Picture">
+            <summary>
+            URL of the user's profile picture.
+            </summary>
+            <remarks>
+            Note that this URL SHOULD specifically reference a profile photo of the End-User suitable for 
+            displaying when describing the user, rather than an arbitrary photo taken by the user.
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfo.Website">
+            <summary>
+            URL of the user's Web page or blog.
+            </summary>
+            <remarks>
+            This Web page SHOULD contain information published by the End-User or an organization that
+            the End-User is affiliated with.
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfo.Email">
+            <summary>
+            User's preferred e-mail address. 
+            </summary>
+            <remarks>
+            You MUST NOT rely upon this value being unique.
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfo.EmailVerified">
+            <summary>
+            Whether the user's email address has been verified or not.
+            </summary>
+            <remarks>
+            When this Claim Value is true, this means that the OP took affirmative steps to ensure that this e-mail 
+            address was controlled by the user at the time the verification was performed. The means by which an 
+            e-mail address is verified is context-specific, and dependent upon the trust framework or contractual 
+            agreements within which the parties are operating.
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfo.Gender">
+            <summary>
+            User's gender.
+            </summary>
+            <remarks>
+            Values defined by the specification include `female` and `male`.
+            Other values MAY be used when neither of the defined values are applicable.
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfo.Birthdate">
+            <summary>
+            Gets or sets the user's birthday, represented as an ISO 8601:2004 [ISO8601‑2004] YYYY-MM-DD format. 
+            The year MAY be 0000, indicating that it is omitted. To represent only the year, YYYY format is allowed. 
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfo.ZoneInformation">
+            <summary>
+            User's time zone as a "tz database name".
+            </summary>
+            <example><code>Europe/Paris</code> or <code>America/Los_Angeles</code>.</example>
+            <remarks>
+            See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for more details.
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfo.Locale">
+            <summary>
+            User's locale, represented as a BCP47 language tag.
+            </summary>
+            <example><code>en-US</code> or <code>fr-CA</code></example>
+            <remarks>
+            Typically an ISO 639-1 Alpha-2 language code in lowercase and an 
+            ISO 3166-1 Alpha-2 country code in uppercase, separated by a dash. 
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfo.PhoneNumber">
+            <summary>
+            User's preferred telephone number.
+            </summary>
+            <example><code>+1 (425) 555-1212</code> or <code>+1 (604) 555-1234;ext=5678.</code></example>
+            <remarks>
+            E.164 is the RECOMMENDED format.
+            If the phone number contains an extension, it is RECOMMENDED that the 
+            extension be represented using the RFC 3966 extension syntax. 
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfo.PhoneNumberVerified">
+            <summary>
+            Whether the user's phone number has been verified or not.
+            </summary>
+            <remarks>
+            When this Claim Value is true, this means that the OP took affirmative steps to ensure that this 
+            phone number was controlled by the user at the time the verification was performed. 
+            When true, the phone_number Claim MUST be in E.164 format and any extensions MUST be represented in RFC 3966 format.
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfo.Address">
+            <summary>
+            User's preferred postal/mailing address.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfo.UpdatedAt">
+            <summary>
+            Time and date the user's information was last updated. 
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfo.AdditionalClaims">
+            <summary>
+            Additional claims about the user.
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.UserInfoAddress">
+            <summary>
+            Represents a physical mailing address of an user.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfoAddress.Formatted">
+            <summary>
+            Full mailing address, formatted for display or use on a mailing label.
+            </summary>
+            <remarks>
+            MAY contain multiple lines, separated by newlines as either CRLF (Windows) `\r\n` or LF (Unix) `\n`.
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfoAddress.StreetAddress">
+            <summary>
+            Full street address component, which MAY include house number, 
+            street name, Post Office Box, and multi-line extended street address information.
+            </summary>
+            <remarks>
+            MAY contain multiple lines, separated by newlines as either CRLF (Windows) `\r\n` or LF (Unix) `\n`.
+            </remarks>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfoAddress.Locality">
+            <summary>
+            City or locality component of the address.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfoAddress.Region">
+            <summary>
+            State, province, prefecture, or region component of the address.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfoAddress.PostalCode">
+            <summary>
+            Zip or postal code component of the address.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserInfoAddress.Country">
+            <summary>
+            Country component of the address.
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Models.UserMaintenanceRequestBase">
+            <summary>
+            Base class for user maintenance requests.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserMaintenanceRequestBase.ClientId">
+            <summary>
+            Client ID of the application.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserMaintenanceRequestBase.Connection">
+            <summary>
+            Name of the connection.
+            </summary>
+        </member>
+        <member name="P:Auth0.AuthenticationApi.Models.UserMaintenanceRequestBase.Email">
+            <summary>
+            Email address of the user.
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Tokens.Auth0ClaimNames">
+            <summary>
+            List of Auth0 specific claims
+            </summary>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Tokens.IdTokenClaimValidator">
+            <summary>
+            Perform validation of an ID token in compliance with specified <see cref="T:Auth0.AuthenticationApi.Tokens.IdTokenRequirements"/>.
+            </summary>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Tokens.IdTokenClaimValidator.AssertClaimsMeetRequirements(Auth0.AuthenticationApi.Tokens.IdTokenRequirements,System.IdentityModel.Tokens.Jwt.JwtSecurityToken,System.Nullable{System.DateTime})">
+            <summary>
+            Assert that all the claims within a <see cref="T:System.IdentityModel.Tokens.Jwt.JwtSecurityToken"/> meet the specified <see cref="T:Auth0.AuthenticationApi.Tokens.IdTokenRequirements"/> for a given point in time.
+            </summary>
+            <param name="required"><see cref="T:Auth0.AuthenticationApi.Tokens.IdTokenRequirements"/> that should be asserted.</param>
+            <param name="token"><see cref="T:System.IdentityModel.Tokens.Jwt.JwtSecurityToken"/> to assert requirements against.</param>
+            <param name="pointInTime"><see cref="T:System.DateTime"/> to act as "Now" when asserting time-based claims.</param>
+            <exception cref="T:Auth0.AuthenticationApi.Tokens.IdTokenValidationException">Exception thrown if <paramref name="token"/> fails to
+            meet the requirements specified by <paramref name="required"/>.
+            </exception>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Tokens.IdTokenClaimValidator.GetEpoch(System.Collections.Generic.IEnumerable{System.Security.Claims.Claim},System.String)">
+            <summary>
+            Get a epoch (Unix time) value for a given claim.
+            </summary>
+            <param name="claims"><see cref="T:System.Collections.Generic.IEnumerable`1"/>Claims to search the <paramref name="claimType"/> for.</param>
+            <param name="claimType">Type of claim to search the <paramref name="claims"/> for.  See <see cref="T:System.IdentityModel.Tokens.Jwt.JwtRegisteredClaimNames"/> for possible names.</param>
+            <returns>Nullable <see cref="T:System.Int64"/> containing the value containing the epoch value or <see langword="null"/> if no matching value was found.</returns>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Tokens.IdTokenClaimValidator.GetClaimValue(System.Collections.Generic.IEnumerable{System.Security.Claims.Claim},System.String)">
+            <summary>
+            Get the value for a given claim.
+            </summary>
+            <param name="claims"><see cref="T:System.Collections.Generic.IEnumerable`1"/>Claims to search the <paramref name="claimType"/> for.</param>
+            <param name="claimType">Type of claim to search the <paramref name="claims"/> for. See <see cref="T:System.IdentityModel.Tokens.Jwt.JwtRegisteredClaimNames"/> or <see cref="T:Auth0.AuthenticationApi.Tokens.Auth0ClaimNames"/> for possible names.</param>
+            <returns><see cref="T:System.String"/> containing the value or <see langword="null"/> if no matching value was found.</returns>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Tokens.IdTokenRequirements">
+            <summary>
+            Identity token validation requirements for use with <see cref="T:Auth0.AuthenticationApi.Tokens.IdTokenClaimValidator"/>.
+            </summary>
+        </member>
+        <member name="F:Auth0.AuthenticationApi.Tokens.IdTokenRequirements.SignatureAlgorithm">
+            <summary>
+            Required algorithm the token must be signed using.
+            </summary>
+        </member>
+        <member name="F:Auth0.AuthenticationApi.Tokens.IdTokenRequirements.Issuer">
+            <summary>
+            Required issuer (iss) the token must be from.
+            </summary>
+        </member>
+        <member name="F:Auth0.AuthenticationApi.Tokens.IdTokenRequirements.Audience">
+            <summary>
+            Required audience (aud) the token must be for.
+            </summary>
+        </member>
+        <member name="F:Auth0.AuthenticationApi.Tokens.IdTokenRequirements.Nonce">
+            <summary>
+            Optional one-time nonce the token must be issued in response to.
+            </summary>
+        </member>
+        <member name="F:Auth0.AuthenticationApi.Tokens.IdTokenRequirements.MaxAge">
+            <summary>
+            Optional maximum time since the user last authenticated.
+            </summary>
+        </member>
+        <member name="F:Auth0.AuthenticationApi.Tokens.IdTokenRequirements.Leeway">
+            <summary>
+            Amount of leeway to allow in validating date and time claims in order to allow some clock variance
+            between the issuer and the application.
+            </summary>
+        </member>
+        <member name="F:Auth0.AuthenticationApi.Tokens.IdTokenRequirements.Organization">
+            <summary>
+            Optional organization (org_id) the token must be for.
+            </summary>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Tokens.IdTokenRequirements.#ctor(Auth0.AuthenticationApi.JwtSignatureAlgorithm,System.String,System.String,System.TimeSpan,System.Nullable{System.TimeSpan},System.String)">
+            <summary>
+            Create a new instance of <see cref="T:Auth0.AuthenticationApi.Tokens.IdTokenRequirements"/> with specified parameters.
+            </summary>
+            <param name="signatureAlgorithm"><see cref="T:Auth0.AuthenticationApi.JwtSignatureAlgorithm"/> the id token must be signed with.</param>
+            <param name="issuer">Required issuer (iss) the token must be from.</param>
+            <param name="audience">Required audience (aud) the token must be for.</param>
+            <param name="leeway">Amount of leeway in validating date and time claims to allow some clock variance
+            between the issuer and the application.</param>
+            <param name="maxAge">Optional maximum time since the user last authenticated.</param>
+            <param name="organization">Optional organization (org_id) the token must be for.</param>
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Tokens.IdTokenValidationException">
+            <summary>
+            Exception used to convey ways in which an identity token has failed to be validated.
+            </summary>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Tokens.IdTokenValidationException.#ctor">
+            Create a new <see cref="T:Auth0.AuthenticationApi.Tokens.IdTokenValidationException"/> with no error message.
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Tokens.IdTokenValidationException.#ctor(System.String)">
+            <summary>
+            Create a new <see cref="T:Auth0.AuthenticationApi.Tokens.IdTokenValidationException"/> with a given error message.
+            </summary>
+            <param name="message">Message that describes how the token fails to meet validation requirements.</param>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Tokens.IdTokenValidationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Create a new <see cref="T:Auth0.AuthenticationApi.Tokens.IdTokenValidationException"/> that contains a further inner 
+            <see cref="T:System.Exception"/> describing how this token could not be validated.
+            </summary>
+            <param name="message">Message that describes how the token fails to meet validation requirements.</param>
+            <param name="innerException">Inner exception that caused this validation exception.</param>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Tokens.IdTokenValidationException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Auth0.AuthenticationApi.Tokens.IdTokenValidationKeyMissingException">
+            <summary>
+            Exception used to convey a token's key could not be found.
+            </summary>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Tokens.IdTokenValidationKeyMissingException.#ctor">
+            Create a new <see cref="T:Auth0.AuthenticationApi.Tokens.IdTokenValidationKeyMissingException"/> with no error message.
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Tokens.IdTokenValidationKeyMissingException.#ctor(System.String)">
+            <summary>
+            Create a new <see cref="T:Auth0.AuthenticationApi.Tokens.IdTokenValidationKeyMissingException"/> with a given error message.
+            </summary>
+            <param name="message">Message that describes how the token's key could not be found.</param>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Tokens.IdTokenValidationKeyMissingException.#ctor(System.String,System.Exception)">
+            <summary>
+            Create a new <see cref="T:Auth0.AuthenticationApi.Tokens.IdTokenValidationKeyMissingException"/> that contains a further inner 
+            <see cref="T:System.Exception"/> describing how this token's key could not be found.
+            </summary>
+            <param name="message">Message that describes how the token fails to meet validation requirements.</param>
+            <param name="innerException">Inner exception that caused this validation exception.</param>
+        </member>
+        <member name="M:Auth0.AuthenticationApi.Tokens.IdTokenValidationKeyMissingException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,81 @@
+﻿<h2>@ViewBag.Title</h2>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>About Us</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="~/Home/Index">Home</a></li>
+                        <li class="breadcrumb-item active">About Us</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-12 float-left" id="accordion">
+                <div class="card card-primary card-outline">
+                    <a class="d-block w-100" data-toggle="collapse" href="#collapseOne">
+                        <div class="card-header">
+                            <h4 class="card-title w-100">
+                                1. Who are we?
+                            </h4>
+                        </div>
+                    </a>
+                    <div id="collapseOne" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            This is the Official Ticket Manager created by <b>ME</b>, Jason Saavedra.
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-primary card-outline">
+                    <a class="d-block w-100" data-toggle="collapse" href="#collapseTwo">
+                        <div class="card-header">
+                            <h4 class="card-title w-100">
+                                2. What is the purpose of this application?
+                            </h4>
+                        </div>
+                    </a>
+                    <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            This application is a demo project of a ticket management system. This allows an organization to connect their employees here to manage projects, bugs, sprints, etc.
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-primary card-outline">
+                    <a class="d-block w-100" data-toggle="collapse" href="#collapseThree">
+                        <div class="card-header">
+                            <h4 class="card-title w-100">
+                                3. Do you plan on getting the job?
+                            </h4>
+                        </div>
+                    </a>
+                    <div id="collapseThree" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            Simply put... Yes
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mt-3 text-center">
+                <p class="lead">
+                    <a href="~/Home/Contact">Contact us</a>,
+                    to learn more.<br />
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

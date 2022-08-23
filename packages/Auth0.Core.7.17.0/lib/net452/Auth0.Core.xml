@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Auth0.Core</name>
+    </assembly>
+    <members>
+        <member name="M:Auth0.Core.ConcurrentRandom.Next(System.Int32,System.Int32)">
+            <summary>
+            Returns a random integer that is within a specified range.
+            </summary>
+            <param name="minValue">The inclusive lower bound of the random number returned.</param>
+            <param name="maxValue">The exclusive upper bound of the random number returned. <paramref name="maxValue" /> must be greater than or equal to <paramref name="minValue" />.</param>
+            <returns>A 32-bit signed integer greater than or equal to <paramref name="minValue" /> and less than <paramref name="maxValue" />; that is, the range of return values includes <paramref name="minValue" /> but not <paramref name="maxValue" />. If <paramref name="minValue" /> equals <paramref name="maxValue" />, <paramref name="minValue" /> is returned.</returns>
+        </member>
+        <member name="T:Auth0.Core.Exceptions.ApiError">
+            <summary>
+            Error information captured from a failed API request.
+            </summary>
+        </member>
+        <member name="P:Auth0.Core.Exceptions.ApiError.Error">
+            <summary>
+            Description of the failing HTTP Status Code.
+            </summary>
+        </member>
+        <member name="P:Auth0.Core.Exceptions.ApiError.ErrorCode">
+            <summary>
+            Error code returned by the API.
+            </summary>
+        </member>
+        <member name="P:Auth0.Core.Exceptions.ApiError.Message">
+            <summary>
+            Description of the error.
+            </summary>
+        </member>
+        <member name="P:Auth0.Core.Exceptions.ApiError.ExtraData">
+            <summary>
+            Additional key/values that might be returned by the error such as `mfa_required`.
+            </summary>
+        </member>
+        <member name="M:Auth0.Core.Exceptions.ApiError.Parse(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Parse a <see cref="T:System.Net.Http.HttpResponseMessage"/> into an <see cref="T:Auth0.Core.Exceptions.ApiError"/> asynchronously.
+            </summary>
+            <param name="response"><see cref="T:System.Net.Http.HttpResponseMessage"/> to parse.</param>
+            <returns><see cref="T:System.Threading.Tasks.Task"/> representing the operation and associated <see cref="T:Auth0.Core.Exceptions.ApiError"/> on
+            successful completion.</returns>
+        </member>
+        <member name="T:Auth0.Core.Exceptions.ApiException">
+            <summary>
+            Represents an exception that occurs when making API calls.
+            </summary>
+        </member>
+        <member name="M:Auth0.Core.Exceptions.ApiException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.Core.Exceptions.ErrorApiException"/> class.
+            </summary>
+        </member>
+        <member name="M:Auth0.Core.Exceptions.ApiException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.Core.Exceptions.ApiException"/> class with a specified error message.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+        </member>
+        <member name="M:Auth0.Core.Exceptions.ApiException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.Core.Exceptions.ApiException"/> class with a specified error message
+            and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null 
+            reference if no inner exception is specified.</param>
+        </member>
+        <member name="M:Auth0.Core.Exceptions.ApiException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Auth0.Core.Exceptions.ApiException.CreateSpecificExceptionAsync(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Create an instance of the specific exception required for this unsuccessful <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </summary>
+            <param name="response"><see cref="T:System.Net.Http.HttpResponseMessage"/> to parse for the correct exception.</param>
+            <returns>An instance of a <see cref="T:Auth0.Core.Exceptions.ApiException"/> subclass containing the appropriate exception for this response.</returns>
+        </member>
+        <member name="T:Auth0.Core.Exceptions.ErrorApiException">
+            <summary>
+            Represents errors that occur when making API calls.
+            </summary>
+        </member>
+        <member name="P:Auth0.Core.Exceptions.ErrorApiException.ApiError">
+            <summary>
+            Optional <see cref="T:Auth0.Core.Exceptions.ApiError"/> from the failing API call.
+            </summary>
+        </member>
+        <member name="P:Auth0.Core.Exceptions.ErrorApiException.StatusCode">
+            <summary>
+            <see cref="T:System.Net.HttpStatusCode"/> code from the failing API call.
+            </summary>
+        </member>
+        <member name="M:Auth0.Core.Exceptions.ErrorApiException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.Core.Exceptions.ErrorApiException"/> class.
+            </summary>
+        </member>
+        <member name="M:Auth0.Core.Exceptions.ErrorApiException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.Core.Exceptions.ErrorApiException"/> class with a specified error message.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+        </member>
+        <member name="M:Auth0.Core.Exceptions.ErrorApiException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.Core.Exceptions.ErrorApiException"/> class with a specified error message
+            and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null 
+            reference if no inner exception is specified.</param>
+        </member>
+        <member name="M:Auth0.Core.Exceptions.ErrorApiException.#ctor(System.Net.HttpStatusCode,Auth0.Core.Exceptions.ApiError)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.Core.Exceptions.ApiException"/> class with a specified
+            <paramref name="statusCode"/> and optional <paramref name="apiError"/>.
+            </summary>
+            <param name="statusCode"><see cref="T:System.Net.HttpStatusCode"/>code of the failing API call.</param>
+            <param name="apiError">Optional <see cref="P:Auth0.Core.Exceptions.ErrorApiException.ApiError"/> of the failing API call.</param>
+        </member>
+        <member name="M:Auth0.Core.Exceptions.ErrorApiException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Auth0.Core.Exceptions.RateLimit">
+            <summary>
+            Represents information about the rate limit for API calls.
+            </summary>
+        </member>
+        <member name="P:Auth0.Core.Exceptions.RateLimit.Limit">
+            <summary>
+            The maximum number of requests the consumer is allowed to make.
+            </summary>
+        </member>
+        <member name="P:Auth0.Core.Exceptions.RateLimit.Remaining">
+            <summary>
+            The number of requests remaining in the current rate limit window.
+            </summary>
+        </member>
+        <member name="P:Auth0.Core.Exceptions.RateLimit.Reset">
+            <summary>
+            The date and time offset at which the current rate limit window is reset.
+            </summary>
+        </member>
+        <member name="M:Auth0.Core.Exceptions.RateLimit.Parse(System.Net.Http.Headers.HttpHeaders)">
+            <summary>
+            Parse the rate limit headers into a <see cref="T:Auth0.Core.Exceptions.RateLimit"/> object.
+            </summary>
+            <param name="headers"><see cref="T:System.Net.Http.Headers.HttpHeaders"/> to parse.</param>
+            <returns>Instance of <see cref="T:Auth0.Core.Exceptions.RateLimit"/> containing parsed rate limit headers.</returns>
+        </member>
+        <member name="T:Auth0.Core.Exceptions.RateLimitApiException">
+            <summary>
+            Represents errors caused by rate limits being exceeded when making API calls.
+            </summary>
+        </member>
+        <member name="P:Auth0.Core.Exceptions.RateLimitApiException.RateLimit">
+            <summary>
+            <see cref="P:Auth0.Core.Exceptions.RateLimitApiException.RateLimit"/> as determined by the server.
+            </summary>
+        </member>
+        <member name="P:Auth0.Core.Exceptions.RateLimitApiException.ApiError">
+            <summary>
+            Optional <see cref="T:Auth0.Core.Exceptions.ApiError"/> from the failing API call.
+            </summary>
+        </member>
+        <member name="M:Auth0.Core.Exceptions.RateLimitApiException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.Core.Exceptions.RateLimitApiException"/> class.
+            </summary>
+        </member>
+        <member name="M:Auth0.Core.Exceptions.RateLimitApiException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.Core.Exceptions.RateLimitApiException"/> class with a specified error message.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+        </member>
+        <member name="M:Auth0.Core.Exceptions.RateLimitApiException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.Core.Exceptions.RateLimitApiException"/> class with a specified error message
+            and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null 
+            reference if no inner exception is specified.</param>
+        </member>
+        <member name="M:Auth0.Core.Exceptions.RateLimitApiException.#ctor(Auth0.Core.Exceptions.RateLimit,Auth0.Core.Exceptions.ApiError)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Auth0.Core.Exceptions.RateLimitApiException"/> class with a specified <paramref name="rateLimit"/>.
+            </summary>
+            <param name="rateLimit"><see cref="T:Auth0.Core.Exceptions.RateLimit"/> received on the API call that failed.</param>
+            <param name="apiError"><see cref="T:Auth0.Core.Exceptions.ApiError"/> received on the API call that failed.</param>
+        </member>
+        <member name="M:Auth0.Core.Exceptions.RateLimitApiException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Auth0.Core.Http.Utils.CombineUriParts(System.String[])">
+            <summary>
+            Combines URI parts, taking care of trailing and starting slashes.
+            See http://stackoverflow.com/a/6704287
+            </summary>
+            <param name="uriParts">The URI parts to combine.</param>
+        </member>
+    </members>
+</doc>

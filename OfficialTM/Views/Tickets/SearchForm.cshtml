@@ -1,0 +1,89 @@
+﻿@model OfficialTM.Models.TicketModel
+
+@{
+    ViewBag.Title = "SearchForm";
+}
+
+<h2>Search For Tickets</h2>
+<!-- Search by Title -->
+@using (Html.BeginForm("SearchForTitle", "Tickets"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="col-md-10">
+                <label for="searchPhrase">Search by Title</label>
+                <input type="text" name="searchPhrase" id="searchPhrase" class="form-control" />
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Search" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<!-- Search by Submitter -->
+@using (Html.BeginForm("SearchForSubmitter", "Tickets"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="col-md-10">
+                <label for="searchPhrase">Search by Submitter</label>
+                <input type="text" name="searchPhrase" id="searchPhrase" class="form-control" />
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Search" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<!-- Search by Status (SELECT: Open or Closed) -->
+@using (Html.BeginForm("SearchForStatus", "Tickets"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+ 
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="col-md-10">
+                <label for="searchPhrase">Search by Status</label>
+                <div>
+                    <select id="searchPhrase" name="searchPhrase">
+                        <option value="Open">Open</option>
+                        <option value="Closed">Closed</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Search" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
