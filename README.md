@@ -17,5 +17,5 @@ where they can submit bug/error requests, application update requests, and much 
 
 ## Demo
 
-Insert gif or link to demo
+[Watch a live demo of my application w/ commentary](https://www.youtube.com/watch?v=VfInD35Ljr0)
 
