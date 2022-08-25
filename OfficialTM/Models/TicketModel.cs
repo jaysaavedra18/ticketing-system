@@ -22,12 +22,12 @@ namespace OfficialTM.Models
         [Required]
         public string Status { get; set; }
 
-        
+        [Required]
         public string Priority { get; set; }
 
-        
+        [Required]
         public string Type { get; set; }
-        
+
 
 
         public TicketModel()
@@ -36,6 +36,9 @@ namespace OfficialTM.Models
             Title = "";
             Description = "";
             Submitter = "";
+            Status = "";
+            Priority = "";
+            Type = "";
         }
 
         public TicketModel(int id, string title, string description, string submitter, string status, string priority, string type)

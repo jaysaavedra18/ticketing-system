@@ -52,6 +52,9 @@
     <Reference Include="Auth0.Core, Version=7.17.0.0, Culture=neutral, PublicKeyToken=afe355c419914736, processorArchitecture=MSIL">
       <HintPath>..\packages\Auth0.Core.7.17.0\lib\net452\Auth0.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Auth0.ManagementApi, Version=7.17.0.0, Culture=neutral, PublicKeyToken=afe355c419914736, processorArchitecture=MSIL">
+      <HintPath>..\packages\Auth0.ManagementApi.7.17.0\lib\net452\Auth0.ManagementApi.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.6.5.0\lib\net461\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
@@ -214,6 +217,14 @@
     <Compile Include="Migrations\202208250712436_AddProjectLead.designer.cs">
       <DependentUpon>202208250712436_AddProjectLead.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202208251421293_CreatedComments.cs" />
+    <Compile Include="Migrations\202208251421293_CreatedComments.designer.cs">
+      <DependentUpon>202208251421293_CreatedComments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208251516411_DeletedComments.cs" />
+    <Compile Include="Migrations\202208251516411_DeletedComments.designer.cs">
+      <DependentUpon>202208251516411_DeletedComments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ProjectModel.cs" />
@@ -275,6 +286,8 @@
     <Content Include="Views\Projects\SearchForm.cshtml" />
     <Content Include="Views\Account\Claims.cshtml" />
     <Content Include="Views\Account\Tokens.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -301,6 +314,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202208250712436_AddProjectLead.resx">
       <DependentUpon>202208250712436_AddProjectLead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208251421293_CreatedComments.resx">
+      <DependentUpon>202208251421293_CreatedComments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208251516411_DeletedComments.resx">
+      <DependentUpon>202208251516411_DeletedComments.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

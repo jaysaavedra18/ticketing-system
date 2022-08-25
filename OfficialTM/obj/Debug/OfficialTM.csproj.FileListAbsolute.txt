@@ -128,3 +128,5 @@ C:\Users\jason\source\repos\OfficialTM\OfficialTM\obj\Debug\OfficialTM.Migration
 C:\Users\jason\source\repos\OfficialTM\OfficialTM\obj\Debug\OfficialTM.csproj.GenerateResource.cache
 C:\Users\jason\source\repos\OfficialTM\OfficialTM\obj\Debug\OfficialTM.Migrations.AddProjectDateTime.resources
 C:\Users\jason\source\repos\OfficialTM\OfficialTM\obj\Debug\OfficialTM.Migrations.AddProjectLead.resources
+C:\Users\jason\source\repos\OfficialTM\OfficialTM\obj\Debug\OfficialTM.Migrations.CreatedComments.resources
+C:\Users\jason\source\repos\OfficialTM\OfficialTM\obj\Debug\OfficialTM.Migrations.DeletedComments.resources
