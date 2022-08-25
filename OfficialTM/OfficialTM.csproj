@@ -198,19 +198,21 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
-    <Compile Include="Data\ProjectDAO.cs" />
-    <Compile Include="Data\TicketDAO.cs" />
     <Compile Include="Controllers\TicketsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202208220014407_InitialState.cs" />
-    <Compile Include="Migrations\202208220014407_InitialState.designer.cs">
-      <DependentUpon>202208220014407_InitialState.cs</DependentUpon>
+    <Compile Include="Migrations\202208250550379_InitialState.cs" />
+    <Compile Include="Migrations\202208250550379_InitialState.designer.cs">
+      <DependentUpon>202208250550379_InitialState.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202208220018147_FillDatabase.cs" />
-    <Compile Include="Migrations\202208220018147_FillDatabase.designer.cs">
-      <DependentUpon>202208220018147_FillDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\202208250705293_AddProjectDateTime.cs" />
+    <Compile Include="Migrations\202208250705293_AddProjectDateTime.designer.cs">
+      <DependentUpon>202208250705293_AddProjectDateTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208250712436_AddProjectLead.cs" />
+    <Compile Include="Migrations\202208250712436_AddProjectLead.designer.cs">
+      <DependentUpon>202208250712436_AddProjectLead.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -291,11 +293,14 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202208220014407_InitialState.resx">
-      <DependentUpon>202208220014407_InitialState.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202208250550379_InitialState.resx">
+      <DependentUpon>202208250550379_InitialState.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202208220018147_FillDatabase.resx">
-      <DependentUpon>202208220018147_FillDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202208250705293_AddProjectDateTime.resx">
+      <DependentUpon>202208250705293_AddProjectDateTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208250712436_AddProjectLead.resx">
+      <DependentUpon>202208250712436_AddProjectLead.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

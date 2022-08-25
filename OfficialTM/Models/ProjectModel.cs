@@ -6,11 +6,13 @@ using System.Web;
 
 namespace OfficialTM.Models
 {
-    public class ProjectModel
+    public class ProjectModel: BaseEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        [Display(Name="Project Lead")]
+        public string ProjectLead { get; set; }
 
 
         public ProjectModel()
@@ -18,16 +20,19 @@ namespace OfficialTM.Models
             Id = -1;
             Name = "";
             Description = "";
+            ProjectLead = "";
             
         }
 
-        public ProjectModel(int id, string name, string description, List<int> assignedUserIds, List<int> assignedTicketIds)
+        public ProjectModel(int id, string name, string description, string projectLead)
         {
             Id = id;
             Name = name;
             Description = description;
-
+            ProjectLead = projectLead;
         }
 
     }
+
+
 }

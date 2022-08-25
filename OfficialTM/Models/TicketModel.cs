@@ -6,7 +6,7 @@ using System.Web;
 
 namespace OfficialTM.Models
 {
-    public class TicketModel
+    public class TicketModel: BaseEntity
     {
         public int Id { get; set; }
 
@@ -22,11 +22,12 @@ namespace OfficialTM.Models
         [Required]
         public string Status { get; set; }
 
-        [Required]
-        public int Priority { get; set; }
+        
+        public string Priority { get; set; }
 
-        [Required]
+        
         public string Type { get; set; }
+        
 
 
         public TicketModel()
@@ -35,12 +36,9 @@ namespace OfficialTM.Models
             Title = "";
             Description = "";
             Submitter = "";
-            Status = "";
-            Priority = -1;
-            Type = "";
         }
 
-        public TicketModel(int id, string title, string description, string submitter, string status, int priority, string type)
+        public TicketModel(int id, string title, string description, string submitter, string status, string priority, string type)
         {
             Id = id;
             Title = title;
@@ -50,5 +48,15 @@ namespace OfficialTM.Models
             Priority = priority;
             Type = type;
         }
+    }
+
+    public class BaseEntity
+    {
+        [Display(Name ="Date Created")]
+        public DateTime CreatedDate { get; set; }
+
+        [Display(Name = "Date Updated")]
+        public DateTime UpdatedDate { get; set; }
+
     }
 }

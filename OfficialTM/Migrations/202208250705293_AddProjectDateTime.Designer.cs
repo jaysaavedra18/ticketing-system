@@ -7,13 +7,13 @@ namespace OfficialTM.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class FillDatabase : IMigrationMetadata
+    public sealed partial class AddProjectDateTime : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(FillDatabase));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddProjectDateTime));
         
         string IMigrationMetadata.Id
         {
-            get { return "202208220018147_FillDatabase"; }
+            get { return "202208250705293_AddProjectDateTime"; }
         }
         
         string IMigrationMetadata.Source

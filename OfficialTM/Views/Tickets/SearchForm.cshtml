@@ -54,26 +54,47 @@
     </div>
 }
 
-<!-- Search by Status (SELECT: Open or Closed) -->
+<!-- Search by Status -->
 @using (Html.BeginForm("SearchForStatus", "Tickets"))
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
- 
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             <div class="col-md-10">
-                <label for="searchPhrase">Search by Status</label>
-                <div>
-                    <select id="searchPhrase" name="searchPhrase">
-                        <option value="Open">Open</option>
-                        <option value="Closed">Closed</option>
-                    </select>
-                </div>
+                <select class="form-control" id="searchPhrase" name="searchPhrase">
+                    <option selected>Select Status</option>
+                    <option>Open</option>
+                    <option>Closed</option>
+                    <option>In Progress</option>
+                </select>
             </div>
         </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Search" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<!-- Search by Type -->
+@using (Html.BeginForm("SearchForType", "Tickets"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @{ List<string> typeOptions = new List<string> { "PC/Laptop", "Bug/Error", "Project Inquiry", "General Inquiry" }; }
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.DropDownList("searchPhrase", new SelectList(typeOptions), "Select Type", new { @class = "form-control" })
 
 
         <div class="form-group">

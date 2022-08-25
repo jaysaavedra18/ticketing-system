@@ -7,7 +7,6 @@
 <h2>Details</h2>
 
 <div>
-    <h4>TicketModel</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -56,6 +55,22 @@
 
         <dd>
             @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedDate)
         </dd>
 
     </dl>

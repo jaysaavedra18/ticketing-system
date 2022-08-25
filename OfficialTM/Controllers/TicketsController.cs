@@ -1,7 +1,8 @@
-﻿using OfficialTM.Data;
-using OfficialTM.Models;
+﻿using OfficialTM.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -57,7 +58,20 @@ namespace OfficialTM.Controllers
                 context.Tickets.Add(ticketModel);
             }
 
-            context.SaveChanges();
+            try
+            {
+                context.SaveChanges();
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                {
+                    foreach (var validationError in entityValidationErrors.ValidationErrors)
+                    {
+                        Debug.Write("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                    }
+                }
+            }
 
             return View("Details", ticketModel);
         }
@@ -107,6 +121,16 @@ namespace OfficialTM.Controllers
 
             // get a list of search results from the database
             var tickets = from t in context.Tickets where t.Status.Contains(searchPhrase)
+                          select t;
+
+            return View("Index", tickets);
+        }
+
+        public ActionResult SearchForType(string searchPhrase)
+        {
+
+            // get a list of search results from the database
+            var tickets = from t in context.Tickets where t.Type.Contains(searchPhrase)
                           select t;
 
             return View("Index", tickets);

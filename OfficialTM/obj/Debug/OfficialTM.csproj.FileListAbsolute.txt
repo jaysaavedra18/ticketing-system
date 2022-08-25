@@ -106,9 +106,6 @@ C:\Users\jason\source\repos\OfficialTM\OfficialTM\obj\Debug\OfficialTM.csproj.Co
 C:\Users\jason\source\repos\OfficialTM\OfficialTM\obj\Debug\OfficialTM.csproj.CopyComplete
 C:\Users\jason\source\repos\OfficialTM\OfficialTM\obj\Debug\OfficialTM.dll
 C:\Users\jason\source\repos\OfficialTM\OfficialTM\obj\Debug\OfficialTM.pdb
-C:\Users\jason\source\repos\OfficialTM\OfficialTM\obj\Debug\OfficialTM.Migrations.InitialState.resources
-C:\Users\jason\source\repos\OfficialTM\OfficialTM\obj\Debug\OfficialTM.csproj.GenerateResource.cache
-C:\Users\jason\source\repos\OfficialTM\OfficialTM\obj\Debug\OfficialTM.Migrations.FillDatabase.resources
 C:\Users\jason\source\repos\OfficialTM\OfficialTM\bin\Auth0.AuthenticationApi.dll
 C:\Users\jason\source\repos\OfficialTM\OfficialTM\bin\Auth0.Core.dll
 C:\Users\jason\source\repos\OfficialTM\OfficialTM\bin\Microsoft.IdentityModel.JsonWebTokens.dll
@@ -127,3 +124,7 @@ C:\Users\jason\source\repos\OfficialTM\OfficialTM\bin\Microsoft.IdentityModel.Pr
 C:\Users\jason\source\repos\OfficialTM\OfficialTM\bin\Microsoft.IdentityModel.Tokens.xml
 C:\Users\jason\source\repos\OfficialTM\OfficialTM\bin\Microsoft.Owin.Security.OpenIdConnect.xml
 C:\Users\jason\source\repos\OfficialTM\OfficialTM\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\jason\source\repos\OfficialTM\OfficialTM\obj\Debug\OfficialTM.Migrations.InitialState.resources
+C:\Users\jason\source\repos\OfficialTM\OfficialTM\obj\Debug\OfficialTM.csproj.GenerateResource.cache
+C:\Users\jason\source\repos\OfficialTM\OfficialTM\obj\Debug\OfficialTM.Migrations.AddProjectDateTime.resources
+C:\Users\jason\source\repos\OfficialTM\OfficialTM\obj\Debug\OfficialTM.Migrations.AddProjectLead.resources

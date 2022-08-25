@@ -49,8 +49,10 @@
                         Description = c.String(nullable: false),
                         Submitter = c.String(nullable: false),
                         Status = c.String(nullable: false),
-                        Priority = c.Int(nullable: false),
-                        Type = c.String(nullable: false),
+                        Priority = c.String(),
+                        Type = c.String(),
+                        CreatedDate = c.DateTime(nullable: false),
+                        UpdatedDate = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
