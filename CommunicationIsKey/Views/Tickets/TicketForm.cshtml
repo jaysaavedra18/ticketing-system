@@ -1,0 +1,76 @@
+﻿@model CommunicationIsKey.Models.TicketModel
+
+@{
+    ViewBag.Title = "Ticket Form";
+}
+
+<h2>Create Ticket</h2>
+
+@using (Html.BeginForm("ProcessCreate", "Tickets"))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @{ List<string> statusOptions = new List<string> { "Open", "Closed", "In Progress" }; }
+            @Html.DropDownListFor(model => model.Status, new SelectList(statusOptions), "Select Status", new { @class = "form-control" })
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Priority, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @{ List<string> priorityOptions = new List<string> { "Low", "Medium", "High", "Urgent" }; }
+            @Html.DropDownListFor(model => model.Priority, new SelectList(priorityOptions), "Select Priority", new { @class = "form-control" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @{ List<string> typeOptions = new List<string> { "PC/Laptop", "Bug/Error", "Project Inquiry", "General Inquiry" }; }
+            @Html.DropDownListFor(model => model.Type, new SelectList(typeOptions), "Select Type", new { @class = "form-control" })
+        </div>
+    </div>
+
+    <input type="hidden" name="CreatedDate" value="@Model.CreatedDate" />
+    <input type="hidden" name="UpdatedDate" value="@Model.UpdatedDate" />
+    <input type="hidden" name="Submitter" value="Mr. Placeholder">
+    <input type="hidden" name="Id" value="@Model.Id" />
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
