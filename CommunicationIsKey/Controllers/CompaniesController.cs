@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace CommunicationIsKey.Controllers
 {
+    [Authorize]
     public class CompaniesController : Controller
     {
         private ApplicationDbContext context;

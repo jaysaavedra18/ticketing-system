@@ -60,7 +60,7 @@
 
     <input type="hidden" name="CreatedDate" value="@Model.CreatedDate" />
     <input type="hidden" name="UpdatedDate" value="@Model.UpdatedDate" />
-    <input type="hidden" name="Submitter" value="Mr. Placeholder">
+    <input type="hidden" name="Submitter" value="@User.Identity.Name">
     <input type="hidden" name="Id" value="@Model.Id" />
 
     <div class="form-group">

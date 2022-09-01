@@ -5,6 +5,7 @@ namespace CommunicationIsKey.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
+
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -64,6 +65,7 @@ namespace CommunicationIsKey.Models
 
     public class RegisterViewModel
     {
+        
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
@@ -79,6 +81,8 @@ namespace CommunicationIsKey.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        
     }
 
     public class ResetPasswordViewModel

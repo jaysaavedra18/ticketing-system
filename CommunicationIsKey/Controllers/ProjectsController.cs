@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace CommunicationIsKey.Controllers
 {
+    [Authorize]
     public class ProjectsController : Controller
     {
         private ApplicationDbContext context;
@@ -22,6 +23,7 @@ namespace CommunicationIsKey.Controllers
         }
 
         // GET: Projects
+        [Authorize]
         public ActionResult Index()
         {
 

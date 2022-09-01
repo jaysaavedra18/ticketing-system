@@ -28,16 +28,7 @@
                         <li>@Html.ActionLink("Contracts", "Index", "Contracts")</li>
                         <li>@Html.ActionLink("Companies", "Index", "Companies")</li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
-                        }
-                        else
-                        {
-                            <li>@Html.ActionLink("Login", "Login", "Account")</li>
-                        }
-                    </ul>
+                    @Html.Partial("_LoginPartial")
                 </div>
             </div>
         </div>
